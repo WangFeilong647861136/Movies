@@ -1,0 +1,128 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>VIP视频在线解析网站</title>
+<link rel="shortcut icon" href="img/favicon.ico">
+<script src="static/js/snow.js" type="text/javascript"></script>
+<meta name="keywords" content="VIP视频解析网站">
+<meta name="description" content="VIP视频解析站">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>VIP视频在线解析网站</title>
+<!-- Loading Bootstrap -->
+<link href="static/css/bootstrap.min.css" rel="stylesheet">
+<script src="static/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+</head>
+<body>
+	<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h3 class="text-center">
+				VIP视频在线解析网站
+			</h3>
+			<div class="input-group" style="width: 100%; ">
+				<strong><p>第 一 步 进入各大视频网站，找到想要观看的VIP视频vip会员，然后复制链接（浏览器上的视频地址）</p>
+				<p>第 二 步 将复制的链接粘贴到本站播放地址，并点击立即观看</p>
+				<p>第 三 步 等待解析完成，即可免费观看VIP视频vip会员</p>
+				<p>注：如果默认通道解析不了，请选择其他通道！</p>
+				</strong>
+			</div>
+			
+			<br>
+			<form role="form" class="form-inline">
+				<div class="input-group" style="width: 100%;">
+					<span class="input-group-addon input-lg" style="width: 80px; ">选择播放通道</span>
+					<select class="form-control input-lg" id="jx">
+						<option value="http://jx.du2.cc/?url=" selected="">⑤号通用通道</option> 
+						<option value="http://jx.drgxj.com/?url=" selected="">④号通用通道</option>
+						<option value="https://jx.618g.com/?url=" selected="">③号通用通道</option>
+						<option value="http://api.52xmw.com/?url=" selected="">②号通用通道</option>
+						<option value="https://660e.com/?url=" selected="">①号通用通道</option> 
+					</select>
+			  </div>
+			  <br></br>
+				<div class="input-group" style="width: 100%; ">
+				  <span class="input-group-addon input-lg" style="width: 80px;">视频播放地址</span>
+				  <input class="form-control input-lg" type="text" placeholder="粘贴视频网址" name="url" id="url">
+				</div>
+				<br></br>
+				<input name="doplayers" type="button" id="doplayers" class="btn btn-block btn-lg btn-success"  value="立即播放">
+			</form>
+			<h3 class="text-center">
+				点击下面视频图标,可进入会员视频地址
+			</h3>
+			<div class="row">
+				<div class="col-md-3" >
+					<div class="thumbnail">
+						<a target="_blank" href="http://vip.iqiyi.com/"><img src="static/picture/aqylogo.png" alt="140x140"></a>							
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<a target="_blank" href="http://film.qq.com/"><img src="static/picture/qqlogo.png" alt="140x140"></a>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<a target="_blank" href="http://vip.youku.com/"><img src="static/picture/youkulogo.png" alt="140x140"></a>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<a target="_blank" href="http://vip.tudou.com/index.html"><img src="static/picture/tudoulogo.png" alt="140x140"></a>						
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<a target="_blank" href="http://tv.sohu.com/"><img src="static/picture/sohulogo.png" alt="140x140"></a>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<a target="_blank" href="http://www.pptv.com/"><img src="static/picture/pps.png" alt="140x140"></a>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<a target="_blank" href="http://www.baofeng.com/"><img src="static/picture/bfyy.png" alt="140x140"></a>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<a target="_blank" href="http://yuanxian.le.com/?ref=ym0101"><img src="static/picture/letvlogo.png" alt="140x140"></a>
+					</div>
+				</div>
+			</div>			
+			
+			<div class="alert alert-success alert-dismissable">
+				<h4>
+					注意!
+				</h4> <strong>Warning!</strong> 仅供学习娱乐使用.
+			</div>
+		</div>
+	</div>
+</div>	
+<script type="text/javascript">
+$("#doplayers").bind("click", function() {
+    players()
+});
+
+function players() {
+	//获取通道参数
+	var  ht=$('#jx').val();
+	console.log(ht);
+	//获取视频地址去除空格和后缀参数
+	var a = $('#url').val();
+	a=$.trim(a);
+    var reg = /(http:\/\/|https:\/\/)((\w|=\|\?|\.|\/|&|-)+)/g;
+	a=a.match(reg);
+	var urls= ht+a[0];
+	console.log(urls)
+    if ($('#url').val() == "") {
+        alert('请输入视频网站网址！');
+        $('#url').focus();
+        return (false)
+    }
+	window.location.href= urls;
+}
+</script>
+</body>
